@@ -104,12 +104,26 @@ export default function App() {
     fetchSnapshot();
   }, [fetchSnapshot]);
 
-  // Real-time SSE listener for transactions, email notifications, and reports
+  // Real-time SSE listener with serverless polling fallback (e.g. Vercel)
   useEffect(() => {
+    let pollTimer: ReturnType<typeof setInterval> | null = null;
     const source = new EventSource('/api/events');
 
-    source.addEventListener('connected', () => {
+    source.addEventListener('connected', (event) => {
       setSseConnected(true);
+      try {
+        const info = JSON.parse((event as MessageEvent).data) as { mode?: string };
+        if (info.mode === 'polling') {
+          source.close();
+          if (!pollTimer) {
+            pollTimer = setInterval(() => {
+              fetchSnapshot();
+            }, 8000);
+          }
+        }
+      } catch {
+        // Default to SSE mode
+      }
     });
 
     source.addEventListener('snapshot_updated', () => {
@@ -147,11 +161,16 @@ export default function App() {
     });
 
     source.onerror = () => {
-      setSseConnected(false);
+      if (!pollTimer) {
+        setSseConnected(false);
+      }
     };
 
     return () => {
       source.close();
+      if (pollTimer) {
+        clearInterval(pollTimer);
+      }
       setSseConnected(false);
     };
   }, [fetchSnapshot]);
