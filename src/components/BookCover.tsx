@@ -16,11 +16,11 @@ export function BookCover({ src, title, author, className = '' }: BookCoverProps
   if (!safeSrc || failed) {
     return (
       <div
-        className={`relative flex flex-col justify-between bg-gradient-to-br from-slate-800 via-slate-900 to-teal-950 p-4 text-slate-100 select-none ${className}`}
+        className={`relative flex flex-col justify-between bg-gradient-to-br from-slate-900 via-[#0F2942] to-slate-950 p-4 text-slate-100 select-none ${className}`}
       >
         <div className="flex items-center justify-between border-b border-white/15 pb-2">
-          <span className="font-mono text-[11px] tracking-wider text-teal-300">PUSTAKA</span>
-          <BookOpen className="h-4 w-4 text-teal-300" aria-hidden="true" />
+          <span className="font-mono text-[11px] tracking-wider text-amber-300">AKPOL LIBRARY</span>
+          <BookOpen className="h-4 w-4 text-amber-300" aria-hidden="true" />
         </div>
         <div className="my-auto py-3">
           <p className="font-display text-sm font-semibold leading-snug line-clamp-3 text-white">

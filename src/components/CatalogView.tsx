@@ -123,7 +123,7 @@ export function CatalogView({
                 value={searchQuery}
                 onChange={(e) => onSearchChange(e.target.value)}
                 placeholder="Cari judul, penulis, ISBN..."
-                className="w-full rounded-lg border border-slate-200 bg-slate-50 py-2 pl-9 pr-3 text-sm text-slate-900 focus:border-teal-700 focus:bg-white focus:outline-none"
+                className="w-full rounded-lg border border-slate-200 bg-slate-50 py-2 pl-9 pr-3 text-sm text-slate-900 focus:border-[#0F2942] focus:bg-white focus:outline-none"
               />
             </div>
 
@@ -131,7 +131,7 @@ export function CatalogView({
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as 'populer' | 'terbaru' | 'judul')}
               aria-label="Urutkan buku"
-              className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 focus:border-teal-700 focus:outline-none"
+              className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 focus:border-[#0F2942] focus:outline-none"
             >
               <option value="populer">Terpopuler</option>
               <option value="terbaru">Tahun Terbaru</option>
@@ -263,7 +263,7 @@ export function CatalogView({
                       }}
                       className={`mt-3 w-full rounded-lg px-4 py-2 text-xs font-medium whitespace-nowrap transition-colors ${
                         isAvailable
-                          ? 'bg-teal-700 text-white hover:bg-teal-800'
+                          ? 'bg-[#0F2942] text-white hover:bg-[#163A5C]'
                           : 'border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100'
                       }`}
                     >
@@ -341,7 +341,7 @@ export function CatalogView({
                           <select
                             value={selectedMemberId}
                             onChange={(e) => setSelectedMemberId(e.target.value)}
-                            className="w-full rounded-lg border border-slate-200 px-3 py-2 text-xs text-slate-800 focus:border-teal-700 focus:outline-none"
+                            className="w-full rounded-lg border border-slate-200 px-3 py-2 text-xs text-slate-800 focus:border-[#0F2942] focus:outline-none"
                           >
                             <option value="">Atas nama Admin ({user.name})</option>
                             {members.map((m) => (
@@ -365,7 +365,7 @@ export function CatalogView({
                               onClick={() => setDurationDays(d)}
                               className={`rounded-lg border px-3 py-2 text-xs font-medium tabular-nums transition-colors ${
                                 durationDays === d
-                                  ? 'border-teal-700 bg-teal-50 text-teal-800'
+                                  ? 'border-[#0F2942] bg-slate-100 text-[#0F2942]'
                                   : 'border-slate-200 text-slate-600 hover:bg-slate-50'
                               }`}
                             >
@@ -377,14 +377,14 @@ export function CatalogView({
 
                       <div className="space-y-1 text-xs text-slate-600">
                         <div className="flex items-center gap-2">
-                          <Calendar className="h-3.5 w-3.5 text-teal-700 shrink-0" />
+                          <Calendar className="h-3.5 w-3.5 text-[#0F2942] shrink-0" />
                           <span>
                             Batas jatuh tempo:{' '}
                             <strong className="font-mono text-slate-900">{previewDueDate}</strong>
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <Mail className="h-3.5 w-3.5 text-teal-700 shrink-0" />
+                          <Mail className="h-3.5 w-3.5 text-[#0F2942] shrink-0" />
                           <span>
                             Pengingat otomatis dikirim ke email pada H-2 & H-1 jatuh tempo.
                           </span>
@@ -421,7 +421,7 @@ export function CatalogView({
                         type="button"
                         disabled={submitting}
                         onClick={handleConfirmBorrow}
-                        className="rounded-lg bg-teal-700 px-4 py-2 text-xs font-medium text-white hover:bg-teal-800 disabled:opacity-60 whitespace-nowrap"
+                        className="rounded-lg bg-[#0F2942] px-4 py-2 text-xs font-medium text-white hover:bg-[#163A5C] disabled:opacity-60 whitespace-nowrap"
                       >
                         {!user
                           ? 'Masuk untuk Meminjam'

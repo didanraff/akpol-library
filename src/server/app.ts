@@ -27,7 +27,7 @@ const SESSION_SECRET = process.env.SESSION_SECRET?.trim() || crypto.randomBytes(
 
 function resolveDataPaths(): { dataDir: string; dbPath: string } {
   const defaultDir = path.resolve(process.cwd(), 'data');
-  const tmpDir = path.join(os.tmpdir(), 'lentera-pustaka-data');
+  const tmpDir = path.join(os.tmpdir(), 'akpol-library-data');
   const targetDir = IS_VERCEL ? tmpDir : defaultDir;
   return {
     dataDir: targetDir,
@@ -325,11 +325,11 @@ function createSeedDatabase(): LibraryDatabase {
   const sampleUsers: StoredUser[] = [
     {
       id: 'mbr-001',
-      name: 'Nadia Kartika',
-      email: 'nadia.kartika@pustaka.example',
+      name: 'Taruna Nadia Kartika',
+      email: 'nadia.kartika@akpol.example',
       role: 'member',
-      memberCode: 'LIB-2026-014',
-      department: 'Teknik Informatika',
+      memberCode: 'AKP-2026-014',
+      department: 'Ilmu Kepolisian & Hukum',
       joinedAt: daysFromNowIso(-120),
       status: 'aktif',
       passwordHash: '',
@@ -337,11 +337,11 @@ function createSeedDatabase(): LibraryDatabase {
     },
     {
       id: 'mbr-002',
-      name: 'Rafi Pratama',
-      email: 'rafi.pratama@pustaka.example',
+      name: 'Taruna Rafi Pratama',
+      email: 'rafi.pratama@akpol.example',
       role: 'member',
-      memberCode: 'LIB-2026-028',
-      department: 'Arsitektur',
+      memberCode: 'AKP-2026-028',
+      department: 'Rekayasa Keamanan Siber',
       joinedAt: daysFromNowIso(-95),
       status: 'aktif',
       passwordHash: '',
@@ -349,11 +349,11 @@ function createSeedDatabase(): LibraryDatabase {
     },
     {
       id: 'mbr-003',
-      name: 'Ayu Lestari',
-      email: 'ayu.lestari@pustaka.example',
+      name: 'Taruni Ayu Lestari',
+      email: 'ayu.lestari@akpol.example',
       role: 'member',
-      memberCode: 'LIB-2026-041',
-      department: 'Ekonomi Pembangunan',
+      memberCode: 'AKP-2026-041',
+      department: 'Manajemen Operasional',
       joinedAt: daysFromNowIso(-64),
       status: 'aktif',
       passwordHash: '',
@@ -370,9 +370,9 @@ function createSeedDatabase(): LibraryDatabase {
       bookCoverUrl: books[0].coverUrl,
       isbn: books[0].isbn,
       memberId: 'mbr-001',
-      memberName: 'Nadia Kartika',
-      memberEmail: 'nadia.kartika@pustaka.example',
-      memberCode: 'LIB-2026-014',
+      memberName: 'Taruna Nadia Kartika',
+      memberEmail: 'nadia.kartika@akpol.example',
+      memberCode: 'AKP-2026-014',
       borrowedAt: daysFromNowIso(-6),
       dueAt: daysFromNowIso(1),
       returnedAt: null,
@@ -391,9 +391,9 @@ function createSeedDatabase(): LibraryDatabase {
       bookCoverUrl: books[1].coverUrl,
       isbn: books[1].isbn,
       memberId: 'mbr-002',
-      memberName: 'Rafi Pratama',
-      memberEmail: 'rafi.pratama@pustaka.example',
-      memberCode: 'LIB-2026-028',
+      memberName: 'Taruna Rafi Pratama',
+      memberEmail: 'rafi.pratama@akpol.example',
+      memberCode: 'AKP-2026-028',
       borrowedAt: daysFromNowIso(-10),
       dueAt: daysFromNowIso(-3),
       returnedAt: null,
@@ -412,9 +412,9 @@ function createSeedDatabase(): LibraryDatabase {
       bookCoverUrl: books[2].coverUrl,
       isbn: books[2].isbn,
       memberId: 'mbr-003',
-      memberName: 'Ayu Lestari',
-      memberEmail: 'ayu.lestari@pustaka.example',
-      memberCode: 'LIB-2026-041',
+      memberName: 'Taruni Ayu Lestari',
+      memberEmail: 'ayu.lestari@akpol.example',
+      memberCode: 'AKP-2026-041',
       borrowedAt: daysFromNowIso(-2),
       dueAt: daysFromNowIso(5),
       returnedAt: null,
@@ -433,9 +433,9 @@ function createSeedDatabase(): LibraryDatabase {
       bookCoverUrl: books[4].coverUrl,
       isbn: books[4].isbn,
       memberId: 'mbr-001',
-      memberName: 'Nadia Kartika',
-      memberEmail: 'nadia.kartika@pustaka.example',
-      memberCode: 'LIB-2026-014',
+      memberName: 'Taruna Nadia Kartika',
+      memberEmail: 'nadia.kartika@akpol.example',
+      memberCode: 'AKP-2026-014',
       borrowedAt: daysFromNowIso(-12),
       dueAt: daysFromNowIso(-5),
       returnedAt: daysFromNowIso(-6),
@@ -454,9 +454,9 @@ function createSeedDatabase(): LibraryDatabase {
       bookCoverUrl: books[3].coverUrl,
       isbn: books[3].isbn,
       memberId: 'mbr-003',
-      memberName: 'Ayu Lestari',
-      memberEmail: 'ayu.lestari@pustaka.example',
-      memberCode: 'LIB-2026-041',
+      memberName: 'Taruni Ayu Lestari',
+      memberEmail: 'ayu.lestari@akpol.example',
+      memberCode: 'AKP-2026-041',
       borrowedAt: daysFromNowIso(-5),
       dueAt: daysFromNowIso(2),
       returnedAt: null,
@@ -475,9 +475,9 @@ function createSeedDatabase(): LibraryDatabase {
       bookCoverUrl: books[5].coverUrl,
       isbn: books[5].isbn,
       memberId: 'mbr-002',
-      memberName: 'Rafi Pratama',
-      memberEmail: 'rafi.pratama@pustaka.example',
-      memberCode: 'LIB-2026-028',
+      memberName: 'Taruna Rafi Pratama',
+      memberEmail: 'rafi.pratama@akpol.example',
+      memberCode: 'AKP-2026-028',
       borrowedAt: daysFromNowIso(-3),
       dueAt: daysFromNowIso(11),
       returnedAt: null,
@@ -494,13 +494,13 @@ function createSeedDatabase(): LibraryDatabase {
     {
       id: 'em-9001',
       loanId: 'ln-1001',
-      recipientEmail: 'nadia.kartika@pustaka.example',
-      recipientName: 'Nadia Kartika',
+      recipientEmail: 'nadia.kartika@akpol.example',
+      recipientName: 'Taruna Nadia Kartika',
       bookTitle: 'Algoritma & Struktur Data Modern',
       dueAt: loans[0].dueAt,
       stage: 'h_minus_1',
-      subject: '[Pengingat Jatuh Tempo H-1] Algoritma & Struktur Data Modern — Lentera Pustaka',
-      bodyText: `Halo Nadia Kartika,\n\nBuku "Algoritma & Struktur Data Modern" (ISBN ${books[0].isbn}) yang Anda pinjam akan jatuh tempo besok (${formatDateId(loans[0].dueAt)}).\nSilakan lakukan pengembalian atau perpanjangan online melalui dashboard Lentera Pustaka untuk menghindari denda keterlambatan.\n\nSalam literasi,\nTim Lentera Pustaka`,
+      subject: '[Pengingat Jatuh Tempo H-1] Algoritma & Struktur Data Modern — Akpol Library',
+      bodyText: `Halo Taruna Nadia Kartika,\n\nBuku "Algoritma & Struktur Data Modern" (ISBN ${books[0].isbn}) yang Anda pinjam akan jatuh tempo besok (${formatDateId(loans[0].dueAt)}).\nSilakan lakukan pengembalian atau perpanjangan online melalui dashboard Akpol Library untuk menghindari denda keterlambatan.\n\nSalam literasi,\nTim Sirkulasi Akpol Library`,
       sentAt: new Date(now - 3600 * 1000 * 3).toISOString(),
       deliveryMode: 'simulasi_server',
       status: 'terkirim',
@@ -508,13 +508,13 @@ function createSeedDatabase(): LibraryDatabase {
     {
       id: 'em-9002',
       loanId: 'ln-1002',
-      recipientEmail: 'rafi.pratama@pustaka.example',
-      recipientName: 'Rafi Pratama',
+      recipientEmail: 'rafi.pratama@akpol.example',
+      recipientName: 'Taruna Rafi Pratama',
       bookTitle: 'Monolit Tropis: Arsitektur Beton & Cahaya',
       dueAt: loans[1].dueAt,
       stage: 'overdue',
-      subject: '[Peringatan Terlambat] Monolit Tropis: Arsitektur Beton & Cahaya — Lentera Pustaka',
-      bodyText: `Halo Rafi Pratama,\n\nMasa peminjaman buku "Monolit Tropis: Arsitektur Beton & Cahaya" telah melewati batas jatuh tempo (${formatDateId(loans[1].dueAt)}).\nTotal denda berjalan saat ini: Rp 6.000. Mohon segera kembalikan buku ke meja sirkulasi atau konfirmasi pengembalian di portal.\n\nSalam literasi,\nTim Lentera Pustaka`,
+      subject: '[Peringatan Terlambat] Monolit Tropis: Arsitektur Beton & Cahaya — Akpol Library',
+      bodyText: `Halo Taruna Rafi Pratama,\n\nMasa peminjaman buku "Monolit Tropis: Arsitektur Beton & Cahaya" telah melewati batas jatuh tempo (${formatDateId(loans[1].dueAt)}).\nTotal denda berjalan saat ini: Rp 6.000. Mohon segera kembalikan buku ke meja sirkulasi atau konfirmasi pengembalian di portal.\n\nSalam literasi,\nTim Sirkulasi Akpol Library`,
       sentAt: new Date(now - 3600 * 1000 * 6).toISOString(),
       deliveryMode: 'simulasi_server',
       status: 'terkirim',
@@ -799,7 +799,7 @@ async function sendDueReminderEmail(
     manual_test: 'Pengingat Sirkulasi Manual',
   };
 
-  const subject = `[${stageLabelMap[stage]}] ${loan.bookTitle} — Lentera Pustaka`;
+  const subject = `[${stageLabelMap[stage]}] ${loan.bookTitle} — Akpol Library`;
   const fineLine =
     fineAmount > 0
       ? `\nDenda keterlambatan berjalan: Rp ${fineAmount.toLocaleString('id-ID')}.`
@@ -808,16 +808,16 @@ async function sendDueReminderEmail(
   const bodyText = [
     `Halo ${loan.memberName},`,
     '',
-    `Berikut adalah pemberitahuan real-time untuk peminjaman buku Anda di Lentera Pustaka:`,
+    `Berikut adalah pemberitahuan real-time untuk peminjaman buku Anda di Akpol Library:`,
     `- Judul Buku: ${loan.bookTitle}`,
     `- Penulis: ${loan.bookAuthor}`,
     `- ISBN: ${loan.isbn}`,
     `- Batas Jatuh Tempo: ${formatDateId(loan.dueAt)}${fineLine}`,
     '',
-    `Silakan lakukan pengembalian atau perpanjangan peminjaman secara online melalui dashboard Member Lentera Pustaka.`,
+    `Silakan lakukan pengembalian atau perpanjangan peminjaman secara online melalui dashboard Member Akpol Library.`,
     '',
     `Salam literasi,`,
-    `Tim Sirkulasi Lentera Pustaka`,
+    `Tim Sirkulasi Akpol Library`,
   ].join('\n');
 
   let deliveryMode: 'smtp_live' | 'simulasi_server' = 'simulasi_server';
@@ -1032,7 +1032,7 @@ function requireAuth(req: AuthedRequest, res: Response, next: NextFunction): voi
 
 function requireAdmin(req: AuthedRequest, res: Response, next: NextFunction): void {
   if (!req.authUser || req.authUser.role !== 'admin') {
-    res.status(403).json({ error: 'Akses ditolak. Fitur ini khusus untuk Admin Pustakawan.' });
+    res.status(403).json({ error: 'Akses ditolak. Fitur ini khusus untuk Admin Akpol Library.' });
     return;
   }
   next();
@@ -1145,7 +1145,7 @@ export function createLibraryApp() {
       return;
     }
 
-    const name = sanitizeText(req.body?.name, 80) || 'Admin Pustakawan';
+    const name = sanitizeText(req.body?.name, 80) || 'Admin Akpol Library';
     const email = sanitizeText(req.body?.email, 160).toLowerCase();
     const password = typeof req.body?.password === 'string' ? req.body.password : '';
 
@@ -1225,7 +1225,7 @@ export function createLibraryApp() {
         name,
         email,
         role: 'member',
-        memberCode: `LIB-${new Date().getFullYear()}-${String(db.users.length + 1).padStart(3, '0')}`,
+        memberCode: `AKP-${new Date().getFullYear()}-${String(db.users.length + 1).padStart(3, '0')}`,
         department,
         joinedAt: new Date().toISOString(),
         status: 'aktif',
@@ -1264,8 +1264,8 @@ export function createLibraryApp() {
         }
         const adminProfile: UserProfile = {
           id: 'admin-root',
-          name: db.adminCredential?.name || 'Admin Pustakawan',
-          email: email || db.adminCredential?.email || 'admin@lenterapustaka.id',
+          name: db.adminCredential?.name || 'Admin Akpol Library',
+          email: email || db.adminCredential?.email || 'admin@akpol-library.id',
           role: 'admin',
           memberCode: 'ADM-001',
           department: 'Kepala Sirkulasi & Koleksi',
@@ -1529,7 +1529,7 @@ export function createLibraryApp() {
     const author = sanitizeText(req.body?.author, 100);
     const isbn = sanitizeText(req.body?.isbn, 40);
     const category = sanitizeText(req.body?.category, 60) || 'Ilmu Komputer';
-    const publisher = sanitizeText(req.body?.publisher, 100) || 'Pustaka Digital Nusantara';
+    const publisher = sanitizeText(req.body?.publisher, 100) || 'Akpol Press';
     const year = Math.min(2030, Math.max(1900, Number(req.body?.year) || new Date().getFullYear()));
     const pages = Math.min(3000, Math.max(10, Number(req.body?.pages) || 240));
     const shelfCode = sanitizeText(req.body?.shelfCode, 24) || 'A-001';
@@ -1558,7 +1558,7 @@ export function createLibraryApp() {
       totalCopies,
       availableCopies: totalCopies,
       coverUrl,
-      synopsis: synopsis || 'Buku koleksi digital terkurasi di perpustakaan Lentera Pustaka.',
+      synopsis: synopsis || 'Buku koleksi digital terkurasi di Akpol Library.',
       borrowCount: 0,
       addedAt: new Date().toISOString(),
     };

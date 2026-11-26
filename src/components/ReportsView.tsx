@@ -46,12 +46,12 @@ export function ReportsView({
           Sistem Pelaporan Otomatis Khusus Admin
         </h2>
         <p className="mt-1 text-sm text-slate-500 max-w-md mx-auto">
-          Masuk sebagai Admin Pustakawan untuk mengonfigurasi jadwal laporan sirkulasi otomatis, mengekspor CSV, dan mencetak laporan resmi.
+          Masuk sebagai Admin Akpol Library untuk mengonfigurasi jadwal laporan sirkulasi otomatis, mengekspor CSV, dan mencetak laporan resmi.
         </p>
         <button
           type="button"
           onClick={onOpenAdminAuth}
-          className="mt-5 rounded-lg bg-teal-700 px-5 py-2.5 text-xs font-medium text-white hover:bg-teal-800"
+          className="mt-5 rounded-lg bg-[#0F2942] px-5 py-2.5 text-xs font-medium text-white hover:bg-[#163A5C]"
         >
           Masuk Portal Admin
         </button>
@@ -107,7 +107,7 @@ export function ReportsView({
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `laporan-lentera-pustaka-${report.id}.csv`;
+    link.download = `laporan-akpol-library-${report.id}.csv`;
     link.click();
     URL.revokeObjectURL(url);
   }
@@ -157,7 +157,7 @@ export function ReportsView({
               type="button"
               disabled={generating}
               onClick={handleGenerate}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-teal-700 px-4 py-2 text-xs font-medium text-white hover:bg-teal-800 disabled:opacity-60 whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-[#0F2942] px-4 py-2 text-xs font-medium text-white hover:bg-[#163A5C] disabled:opacity-60 whitespace-nowrap"
             >
               <Plus className="h-3.5 w-3.5" />
               <span>{generating ? 'Menyusun...' : 'Buat Laporan Sekarang'}</span>
@@ -180,7 +180,7 @@ export function ReportsView({
                 onClick={() => setSelectedId(rep.id)}
                 className={`w-full rounded-lg border px-3 py-2.5 text-left transition-colors ${
                   activeReport?.id === rep.id
-                    ? 'border-teal-700 bg-teal-50/70'
+                    ? 'border-[#0F2942] bg-slate-100/80'
                     : 'border-transparent hover:bg-slate-50'
                 }`}
               >
@@ -205,8 +205,8 @@ export function ReportsView({
             <div className="space-y-6">
               <div className="flex flex-col gap-3 border-b border-slate-200 pb-4 sm:flex-row sm:items-start sm:justify-between">
                 <div>
-                  <p className="text-xs font-medium text-teal-800">
-                    Lentera Pustaka · Dokumen Laporan Resmi
+                  <p className="text-xs font-medium text-[#0F2942]">
+                    Akpol Library · Dokumen Laporan Resmi
                   </p>
                   <h2 className="mt-1 font-display text-xl font-bold text-slate-900">
                     {activeReport.title}
@@ -215,7 +215,7 @@ export function ReportsView({
                     Dibuat: {formatDateTimeId(activeReport.generatedAt)} · Sumber:{' '}
                     {activeReport.generatedBy === 'scheduler_otomatis'
                       ? 'Scheduler Otomatis'
-                      : 'Admin Pustakawan'}
+                      : 'Admin Akpol Library'}
                   </p>
                 </div>
 

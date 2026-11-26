@@ -92,12 +92,12 @@ export function DashboardView({
       {/* Header Banner */}
       <div className="flex flex-col gap-4 rounded-xl border border-slate-200 bg-white p-6 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="text-xs font-medium text-teal-800">
+          <p className="text-xs font-medium text-[#0F2942]">
             {isAdmin
               ? 'Dashboard Operasional Admin'
               : user
                 ? `Dashboard Anggota · ${user.memberCode}`
-                : 'Ringkasan Sirkulasi Perpustakaan'}
+                : 'Ringkasan Sirkulasi Akpol Library'}
           </p>
           <h1 className="mt-1 font-display text-2xl font-bold tracking-tight text-slate-900">
             {user ? `Selamat datang, ${user.name}` : 'Pemantauan Sirkulasi Real-Time'}
@@ -124,7 +124,7 @@ export function DashboardView({
               <button
                 type="button"
                 onClick={() => onOpenAuth('admin')}
-                className="rounded-lg bg-teal-700 px-4 py-2 text-xs font-medium text-white hover:bg-teal-800 whitespace-nowrap"
+                className="rounded-lg bg-[#0F2942] px-4 py-2 text-xs font-medium text-white hover:bg-[#163A5C] whitespace-nowrap"
               >
                 Masuk Portal Admin
               </button>
@@ -141,7 +141,7 @@ export function DashboardView({
                     'Pemindaian & pengiriman email pengingat selesai.'
                   )
                 }
-                className="inline-flex items-center gap-1.5 rounded-lg bg-teal-700 px-4 py-2 text-xs font-medium text-white hover:bg-teal-800 disabled:opacity-60 whitespace-nowrap"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-[#0F2942] px-4 py-2 text-xs font-medium text-white hover:bg-[#163A5C] disabled:opacity-60 whitespace-nowrap"
               >
                 <Send className="h-3.5 w-3.5" />
                 <span>{busyId === 'scan-all' ? 'Memindai...' : 'Kirim Pengingat Jatuh Tempo'}</span>
@@ -159,7 +159,7 @@ export function DashboardView({
             <button
               type="button"
               onClick={() => onNavigate('catalog')}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-teal-700 px-4 py-2 text-xs font-medium text-white hover:bg-teal-800 whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-[#0F2942] px-4 py-2 text-xs font-medium text-white hover:bg-[#163A5C] whitespace-nowrap"
             >
               <span>Pinjam Buku Baru</span>
               <ArrowUpRight className="h-3.5 w-3.5" />
@@ -169,7 +169,7 @@ export function DashboardView({
       </div>
 
       {actionMsg && (
-        <div className="rounded-lg border border-teal-200 bg-teal-50 px-4 py-2.5 text-xs text-teal-900">
+        <div className="rounded-lg border border-slate-300 bg-slate-100 px-4 py-2.5 text-xs text-slate-900">
           {actionMsg}
         </div>
       )}
@@ -290,7 +290,7 @@ export function DashboardView({
                 <button
                   type="button"
                   onClick={() => onNavigate('circulation')}
-                  className="text-xs font-medium text-teal-700 hover:underline whitespace-nowrap"
+                  className="text-xs font-medium text-[#0F2942] hover:underline whitespace-nowrap"
                 >
                   Semua Sirkulasi
                 </button>
@@ -406,7 +406,7 @@ export function DashboardView({
                 <button
                   type="button"
                   onClick={() => onNavigate('catalog')}
-                  className="text-xs font-medium text-teal-700 hover:underline whitespace-nowrap"
+                  className="text-xs font-medium text-[#0F2942] hover:underline whitespace-nowrap"
                 >
                   Cari Buku Lain
                 </button>
@@ -420,7 +420,7 @@ export function DashboardView({
                   <button
                     type="button"
                     onClick={() => onNavigate('catalog')}
-                    className="mt-3 rounded-lg bg-teal-700 px-4 py-2 text-xs font-medium text-white hover:bg-teal-800"
+                    className="mt-3 rounded-lg bg-[#0F2942] px-4 py-2 text-xs font-medium text-white hover:bg-[#163A5C]"
                   >
                     Jelajahi Katalog Koleksi
                   </button>
@@ -479,7 +479,7 @@ export function DashboardView({
                               `Buku "${loan.bookTitle}" berhasil dikembalikan.`
                             )
                           }
-                          className="rounded-lg bg-teal-700 px-3 py-1.5 text-xs font-medium text-white hover:bg-teal-800 disabled:opacity-50 whitespace-nowrap"
+                          className="rounded-lg bg-[#0F2942] px-3 py-1.5 text-xs font-medium text-white hover:bg-[#163A5C] disabled:opacity-50 whitespace-nowrap"
                         >
                           Kembalikan
                         </button>
@@ -501,7 +501,7 @@ export function DashboardView({
                 <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <div className="rounded-lg border border-slate-200 p-4">
                     <div className="flex items-center gap-2 text-sm font-semibold text-slate-900">
-                      <UserCheck className="h-4 w-4 text-teal-700" />
+                      <UserCheck className="h-4 w-4 text-[#0F2942]" />
                       <span>Portal Member</span>
                     </div>
                     <p className="mt-1.5 text-xs text-slate-600">
@@ -510,15 +510,15 @@ export function DashboardView({
                     <button
                       type="button"
                       onClick={() => onOpenAuth('member_register')}
-                      className="mt-3 rounded-lg bg-teal-700 px-3.5 py-2 text-xs font-medium text-white hover:bg-teal-800"
+                      className="mt-3 rounded-lg bg-[#0F2942] px-3.5 py-2 text-xs font-medium text-white hover:bg-[#163A5C]"
                     >
                       Daftar / Masuk Member
                     </button>
                   </div>
                   <div className="rounded-lg border border-slate-200 p-4">
                     <div className="flex items-center gap-2 text-sm font-semibold text-slate-900">
-                      <Mail className="h-4 w-4 text-teal-700" />
-                      <span>Portal Admin Pustakawan</span>
+                      <Mail className="h-4 w-4 text-[#0F2942]" />
+                      <span>Portal Admin Akpol Library</span>
                     </div>
                     <p className="mt-1.5 text-xs text-slate-600">
                       Kelola stok koleksi, pantau seluruh transaksi real-time, kirim pengingat email, dan unduh laporan otomatis.
@@ -548,7 +548,7 @@ export function DashboardView({
                 Aliran peristiwa sirkulasi dan pengiriman email langsung
               </p>
             </div>
-            <span className="font-mono text-[11px] text-teal-700 tabular-nums">
+            <span className="font-mono text-[11px] text-[#0F2942] tabular-nums">
               {overview.recentActivities.length} terbaru
             </span>
           </div>
@@ -560,7 +560,7 @@ export function DashboardView({
                 className="border-b border-slate-100 pb-3 last:border-b-0 last:pb-0"
               >
                 <div className="flex items-center justify-between gap-2 text-[11px] text-slate-500">
-                  <span className="font-medium text-teal-800">
+                  <span className="font-medium text-[#0F2942]">
                     {ACTIVITY_LABELS[act.type]}
                   </span>
                   <span className="font-mono tabular-nums shrink-0">

@@ -65,7 +65,7 @@ export function AuthModal({
           {
             method: 'POST',
             body: JSON.stringify({
-              name: name || 'Admin Pustakawan',
+              name: name || 'Admin Akpol Library',
               email,
               password,
             }),
@@ -105,7 +105,7 @@ export function AuthModal({
           <div>
             <h2 id="auth-modal-title" className="font-display text-lg font-bold text-slate-900">
               {mode === 'member_register'
-                ? 'Pendaftaran Anggota Perpustakaan'
+                ? 'Pendaftaran Anggota Akpol Library'
                 : mode === 'admin'
                   ? isFirstRunAdminClaim
                     ? 'Pengaturan Akun Admin Pertama'
@@ -117,7 +117,7 @@ export function AuthModal({
                 ? 'Alamat email Anda akan digunakan untuk notifikasi pengingat jatuh tempo.'
                 : mode === 'admin'
                   ? isFirstRunAdminClaim
-                    ? 'Buat kredensial Admin Pustakawan pertama untuk mengelola koleksi dan laporan.'
+                    ? 'Buat kredensial Admin Akpol Library pertama untuk mengelola koleksi dan laporan.'
                     : 'Akses manajemen koleksi, pemantauan transaksi real-time, dan pelaporan otomatis.'
                   : 'Pinjam buku secara online, pantau jatuh tempo, dan kelola riwayat baca.'}
             </p>
@@ -189,8 +189,8 @@ export function AuthModal({
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder={isFirstRunAdminClaim ? 'Admin Pustakawan' : 'Contoh: Dinda Prameswari'}
-                className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-teal-700 focus:outline-none"
+                placeholder={isFirstRunAdminClaim ? 'Admin Akpol Library' : 'Contoh: Taruna Dinda Prameswari'}
+                className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-[#0F2942] focus:outline-none"
               />
             </div>
           )}
@@ -206,7 +206,7 @@ export function AuthModal({
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="nama@email.com"
-                className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-teal-700 focus:outline-none"
+                className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-[#0F2942] focus:outline-none"
               />
             </div>
           )}
@@ -214,14 +214,14 @@ export function AuthModal({
           {mode === 'member_register' && (
             <div>
               <label className="block text-xs font-medium text-slate-700 mb-1.5">
-                Program Studi / Unit
+                Unit / Prodi / Satuan
               </label>
               <input
                 type="text"
                 value={department}
                 onChange={(e) => setDepartment(e.target.value)}
-                placeholder="Contoh: Teknik Informatika"
-                className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-teal-700 focus:outline-none"
+                placeholder="Contoh: Ilmu Kepolisian & Hukum"
+                className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-[#0F2942] focus:outline-none"
               />
             </div>
           )}
@@ -237,7 +237,7 @@ export function AuthModal({
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Minimal 6 karakter"
-              className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-teal-700 focus:outline-none"
+              className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-[#0F2942] focus:outline-none"
             />
           </div>
 
@@ -250,7 +250,7 @@ export function AuthModal({
           <button
             type="submit"
             disabled={loading}
-            className="flex w-full items-center justify-center gap-2 rounded-lg bg-teal-700 px-4 py-2.5 text-sm font-medium text-white hover:bg-teal-800 disabled:opacity-60 transition-colors whitespace-nowrap"
+            className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#0F2942] px-4 py-2.5 text-sm font-medium text-white hover:bg-[#163A5C] disabled:opacity-60 transition-colors whitespace-nowrap"
           >
             {mode === 'member_register' ? (
               <>

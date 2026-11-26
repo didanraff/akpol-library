@@ -74,7 +74,7 @@ export function CirculationView({
         <button
           type="button"
           onClick={onOpenAuth}
-          className="mt-5 rounded-lg bg-teal-700 px-5 py-2.5 text-xs font-medium text-white hover:bg-teal-800"
+          className="mt-5 rounded-lg bg-[#0F2942] px-5 py-2.5 text-xs font-medium text-white hover:bg-[#163A5C]"
         >
           Masuk / Daftar Akun
         </button>
@@ -122,7 +122,7 @@ export function CirculationView({
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Cari buku, anggota, atau ISBN..."
-              className="w-full rounded-lg border border-slate-200 bg-slate-50 py-2 pl-9 pr-3 text-sm text-slate-900 focus:border-teal-700 focus:bg-white focus:outline-none"
+              className="w-full rounded-lg border border-slate-200 bg-slate-50 py-2 pl-9 pr-3 text-sm text-slate-900 focus:border-[#0F2942] focus:bg-white focus:outline-none"
             />
           </div>
         </div>
@@ -277,7 +277,7 @@ export function CirculationView({
                                   `Pengembalian "${loan.bookTitle}" dicatat.`
                                 )
                               }
-                              className="rounded-md bg-teal-700 px-2.5 py-1 text-[11px] font-medium text-white hover:bg-teal-800 disabled:opacity-50"
+                              className="rounded-md bg-[#0F2942] px-2.5 py-1 text-[11px] font-medium text-white hover:bg-[#163A5C] disabled:opacity-50"
                             >
                               Kembalikan
                             </button>

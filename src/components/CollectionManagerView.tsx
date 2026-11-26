@@ -44,7 +44,7 @@ export function CollectionManagerView({
   const [author, setAuthor] = useState('');
   const [isbn, setIsbn] = useState('');
   const [category, setCategory] = useState(CATEGORIES[0]);
-  const [publisher, setPublisher] = useState('Pustaka Digital Nusantara');
+  const [publisher, setPublisher] = useState('Akpol Press');
   const [year, setYear] = useState(2026);
   const [pages, setPages] = useState(280);
   const [shelfCode, setShelfCode] = useState('A-105');
@@ -72,12 +72,12 @@ export function CollectionManagerView({
           Manajemen Koleksi Khusus Admin
         </h2>
         <p className="mt-1 text-sm text-slate-500 max-w-md mx-auto">
-          Penambahan judul baru, pembaruan stok eksemplar, dan penghapusan koleksi hanya dapat dilakukan oleh akun Admin Pustakawan.
+          Penambahan judul baru, pembaruan stok eksemplar, dan penghapusan koleksi hanya dapat dilakukan oleh akun Admin Akpol Library.
         </p>
         <button
           type="button"
           onClick={onOpenAdminAuth}
-          className="mt-5 rounded-lg bg-teal-700 px-5 py-2.5 text-xs font-medium text-white hover:bg-teal-800"
+          className="mt-5 rounded-lg bg-[#0F2942] px-5 py-2.5 text-xs font-medium text-white hover:bg-[#163A5C]"
         >
           Masuk Portal Admin
         </button>
@@ -91,7 +91,7 @@ export function CollectionManagerView({
     setAuthor('');
     setIsbn('');
     setCategory(CATEGORIES[0]);
-    setPublisher('Pustaka Digital Nusantara');
+    setPublisher('Akpol Press');
     setYear(2026);
     setPages(280);
     setShelfCode('A-105');
@@ -181,13 +181,13 @@ export function CollectionManagerView({
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Cari koleksi..."
-              className="w-full rounded-lg border border-slate-200 bg-slate-50 py-2 pl-9 pr-3 text-sm focus:border-teal-700 focus:bg-white focus:outline-none"
+              className="w-full rounded-lg border border-slate-200 bg-slate-50 py-2 pl-9 pr-3 text-sm focus:border-[#0F2942] focus:bg-white focus:outline-none"
             />
           </div>
           <button
             type="button"
             onClick={openCreate}
-            className="inline-flex items-center gap-1.5 rounded-lg bg-teal-700 px-4 py-2 text-xs font-medium text-white hover:bg-teal-800 whitespace-nowrap shrink-0"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-[#0F2942] px-4 py-2 text-xs font-medium text-white hover:bg-[#163A5C] whitespace-nowrap shrink-0"
           >
             <Plus className="h-4 w-4" />
             <span>Tambah Buku</span>
@@ -330,7 +330,7 @@ export function CollectionManagerView({
                     required
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-teal-700 focus:outline-none"
+                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-[#0F2942] focus:outline-none"
                   />
                 </div>
 
@@ -341,7 +341,7 @@ export function CollectionManagerView({
                     required
                     value={author}
                     onChange={(e) => setAuthor(e.target.value)}
-                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-teal-700 focus:outline-none"
+                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-[#0F2942] focus:outline-none"
                   />
                 </div>
 
@@ -353,7 +353,7 @@ export function CollectionManagerView({
                     value={isbn}
                     onChange={(e) => setIsbn(e.target.value)}
                     placeholder="978-602-481-xxx-x"
-                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm font-mono focus:border-teal-700 focus:outline-none"
+                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm font-mono focus:border-[#0F2942] focus:outline-none"
                   />
                 </div>
 
@@ -362,7 +362,7 @@ export function CollectionManagerView({
                   <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-teal-700 focus:outline-none"
+                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-[#0F2942] focus:outline-none"
                   >
                     {CATEGORIES.map((c) => (
                       <option key={c} value={c}>
@@ -378,7 +378,7 @@ export function CollectionManagerView({
                     type="text"
                     value={publisher}
                     onChange={(e) => setPublisher(e.target.value)}
-                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-teal-700 focus:outline-none"
+                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-[#0F2942] focus:outline-none"
                   />
                 </div>
 
@@ -390,7 +390,7 @@ export function CollectionManagerView({
                     type="text"
                     value={shelfCode}
                     onChange={(e) => setShelfCode(e.target.value)}
-                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm font-mono focus:border-teal-700 focus:outline-none"
+                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm font-mono focus:border-[#0F2942] focus:outline-none"
                   />
                 </div>
 
@@ -403,7 +403,7 @@ export function CollectionManagerView({
                       max={2030}
                       value={year}
                       onChange={(e) => setYear(Number(e.target.value))}
-                      className="w-full rounded-lg border border-slate-200 px-2.5 py-2 text-sm font-mono focus:border-teal-700 focus:outline-none"
+                      className="w-full rounded-lg border border-slate-200 px-2.5 py-2 text-sm font-mono focus:border-[#0F2942] focus:outline-none"
                     />
                   </div>
                   <div>
@@ -414,7 +414,7 @@ export function CollectionManagerView({
                       max={3000}
                       value={pages}
                       onChange={(e) => setPages(Number(e.target.value))}
-                      className="w-full rounded-lg border border-slate-200 px-2.5 py-2 text-sm font-mono focus:border-teal-700 focus:outline-none"
+                      className="w-full rounded-lg border border-slate-200 px-2.5 py-2 text-sm font-mono focus:border-[#0F2942] focus:outline-none"
                     />
                   </div>
                   <div>
@@ -425,7 +425,7 @@ export function CollectionManagerView({
                       max={200}
                       value={totalCopies}
                       onChange={(e) => setTotalCopies(Number(e.target.value))}
-                      className="w-full rounded-lg border border-slate-200 px-2.5 py-2 text-sm font-mono focus:border-teal-700 focus:outline-none"
+                      className="w-full rounded-lg border border-slate-200 px-2.5 py-2 text-sm font-mono focus:border-[#0F2942] focus:outline-none"
                     />
                   </div>
                 </div>
@@ -437,7 +437,7 @@ export function CollectionManagerView({
                   <select
                     value={coverUrl}
                     onChange={(e) => setCoverUrl(e.target.value)}
-                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-teal-700 focus:outline-none"
+                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-[#0F2942] focus:outline-none"
                   >
                     {GENERATED_COVER_PRESETS.map((preset) => (
                       <option key={preset.url} value={preset.url}>
@@ -454,7 +454,7 @@ export function CollectionManagerView({
                     value={synopsis}
                     onChange={(e) => setSynopsis(e.target.value)}
                     placeholder="Ringkasan isi buku..."
-                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-teal-700 focus:outline-none"
+                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-[#0F2942] focus:outline-none"
                   />
                 </div>
               </div>
@@ -476,7 +476,7 @@ export function CollectionManagerView({
                 <button
                   type="submit"
                   disabled={saving}
-                  className="rounded-lg bg-teal-700 px-4 py-2 text-xs font-medium text-white hover:bg-teal-800 disabled:opacity-60"
+                  className="rounded-lg bg-[#0F2942] px-4 py-2 text-xs font-medium text-white hover:bg-[#163A5C] disabled:opacity-60"
                 >
                   {saving ? 'Menyimpan...' : editingBook ? 'Simpan Perubahan' : 'Tambahkan Koleksi'}
                 </button>

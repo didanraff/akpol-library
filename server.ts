@@ -32,7 +32,7 @@ async function startServer() {
   }
 
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Lentera Pustaka server running on http://0.0.0.0:${PORT}`);
+    console.log(`Akpol Library server running on http://0.0.0.0:${PORT}`);
   });
 }
 

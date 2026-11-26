@@ -33,7 +33,7 @@ export function CirculationCharts({ dailyTrend, categoryStats }: CirculationChar
           </div>
           <div className="flex items-center gap-5 text-xs text-slate-600">
             <span className="flex items-center gap-2 whitespace-nowrap">
-              <span className="inline-block h-2.5 w-2.5 rounded-xs bg-teal-700" />
+              <span className="inline-block h-2.5 w-2.5 rounded-xs bg-[#0F2942]" />
               Peminjaman
             </span>
             <span className="flex items-center gap-2 whitespace-nowrap">
@@ -108,7 +108,7 @@ export function CirculationCharts({ dailyTrend, categoryStats }: CirculationChar
                       width={16}
                       height={Math.max(2, borrowH)}
                       rx={3}
-                      fill={isHovered ? '#0D9488' : '#0F766E'}
+                      fill={isHovered ? '#1D4ED8' : '#0F2942'}
                     />
                     <rect
                       x={centerX + 2}
@@ -143,7 +143,7 @@ export function CirculationCharts({ dailyTrend, categoryStats }: CirculationChar
                 <span aria-hidden="true">·</span>
                 <span>
                   Peminjaman:{' '}
-                  <strong className="font-mono text-teal-800">
+                  <strong className="font-mono text-[#0F2942]">
                     {dailyTrend[hoveredIdx].borrows}
                   </strong>
                 </span>
@@ -189,7 +189,7 @@ export function CirculationCharts({ dailyTrend, categoryStats }: CirculationChar
                   </div>
                   <div className="mt-1.5 h-2 w-full overflow-hidden rounded-full bg-slate-100">
                     <div
-                      className="h-full rounded-full bg-teal-700 transition-all duration-300"
+                      className="h-full rounded-full bg-[#0F2942] transition-all duration-300"
                       style={{ width: `${Math.max(4, pct)}%` }}
                     />
                   </div>
