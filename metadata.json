@@ -1,0 +1,6 @@
+{
+  "name": "Lentera Pustaka",
+  "description": "Aplikasi perpustakaan digital modern dengan peminjaman buku online, manajemen koleksi, sistem pelaporan otomatis, dashboard interaktif real-time admin & member, serta notifikasi pengingat jatuh tempo via email.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
